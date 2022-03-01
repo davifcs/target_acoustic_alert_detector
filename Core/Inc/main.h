@@ -34,7 +34,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "app_x-cube-ai.h"
+#include "ai_platform.h"
 #include "feature_extraction.h"
 
 /* USER CODE END Includes */
@@ -59,7 +59,11 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 extern void initialise_monitor_handles(void);
-extern int acquire_and_process_data(float32_t *pInSignal, uint32_t len);
+void Preprocessing_Init(void);
+void AudioPreprocessing_Run(float32_t *pInSignal, float32_t *pOut, uint32_t signal_len);
+void PowerTodB(float32_t *pSpectrogram);
+void MX_X_CUBE_AI_Init(void);
+void MX_X_CUBE_AI_Process(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
